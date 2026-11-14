@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KantinKilat - Pre-Order Cerdas Kantin Sekolah</title>
+    <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Bagian Atas -->
+    <header class="header">
+        <h1>KantinKilat 🍜♻️</h1>
+        <p>Pesan sebelum bel, ambil saat istirahat tanpa antre & kurangi sampah plastik!</p>
+        
+        <!-- Bar Aksesibilitas (Perbesar Teks & Mode Gelap) -->
+        <div class="accessibility-bar">
+            <button id="btn-font" onclick="toggleFontSize()">🔍 Perbesar Teks</button>
+            <button id="btn-theme" onclick="toggleTheme()">🌙 Mode Gelap</button>
+        </div>
+    </header>
+
+    <!-- Konten Utama -->
+    <main class="container">
+        
+        <!-- Tombol Filter Stan Kantin (Mba Luluk & Mba Fitri) -->
+        <nav class="filter-buttons">
+            <button class="filter-btn active" onclick="filterStan('semua', this)">Semua Stan</button>
+            <button class="filter-btn" onclick="filterStan('mba-luluk', this)">Stan Mba Luluk (Nasi & Soto)</button>
+            <button class="filter-btn" onclick="filterStan('mba-fitri', this)">Stan Mba Fitri (Snack & Minum)</button>
+        </nav>
+
+        <!-- Wadah Daftar Menu (Akan dirender oleh JavaScript) -->
+        <section id="menu-list" class="menu-grid">
+            <!-- Menu muncul di sini -->
+        </section>
+
+        <!-- Bagian Keranjang & Checkout (Dilengkapi Opsi Zero Waste untuk Lomba) -->
+        <section class="cart-section">
+            <h2>🛒 Keranjang Pesanan Kamu</h2>
+            
+            <div id="cart-items">
+                <p class="empty-cart">Belum ada menu yang dipilih.</p>
+            </div>
+
+            <!-- Fitur Kampanye Kurangi Sampah Plastik -->
+            <div class="eco-option">
+                <label>
+                    <input type="checkbox" id="bawaWadah"> 
+                    🌿 Saya membawa **Kotak Makan/Tumbler Sendiri** (Bantu kurangi sampah plastik!)
+                </label>
+            </div>
+            
+            <div class="cart-summary">
+                <span>Total: <strong id="cart-total">Rp 0</strong></span>
+                <button id="checkout-btn" onclick="kirimPesanan()" disabled>Kirim Pesanan ke WhatsApp</button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Ditenagai oleh <strong>KantinKilat</strong> • Solusi Digital Anti-Antre & Ramah Lingkungan</p>
+    </footer>
+
+    <!-- Menghubungkan file JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
